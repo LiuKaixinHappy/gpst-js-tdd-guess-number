@@ -6,4 +6,10 @@ describe('main()', () => {
         let expected = '4A0B';
         expect(result).toEqual(expected);
     });
+
+    it('should get 2A2B if 2 right 2 pos wrong', function () {
+        let result = main.score('1243', '1234');
+        let expected = '2A2B';
+        expect(result).toEqual(expected);
+    });
 });
