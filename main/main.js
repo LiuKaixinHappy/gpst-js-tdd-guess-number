@@ -15,9 +15,19 @@ function score(system, guess) {
     return a + 'A' + b + 'B';
 }
 
-function main() {
-};
+function get_no_repeat_int(length) {
+    let array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+    array.sort((a, b) => {
+        return Math.random() > .5 ? -1 : 1
+    });
+    return array[0] === 0 ? array.slice(1, 1 + length) : array.slice(0, 0 + length).join('');
+}
+
+function main(guess) {
+    let random = get_no_repeat_int(4);
+    console.log('System：' + random + '\nYour guess:' + guess + '\nYour score：' + score(random, guess));
+}
 
 module.exports = {
-    main, score
+    main, score, get_no_repeat_int
 };

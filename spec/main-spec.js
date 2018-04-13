@@ -24,4 +24,16 @@ describe('main()', () => {
         let expected = '0A0B';
         expect(result).toEqual(expected);
     });
+
+    it('should get random 4 int without repeat', function () {
+        let rand = main.get_no_repeat_int(4);
+        let is_repeat = false;
+        for (let i = 0; i < rand.length; i++) {
+            if (rand.indexOf(rand[i]) !== rand.lastIndexOf(rand[i])) {
+                is_repeat = true;
+            }
+        }
+        expect(rand.length).toEqual(4);
+        expect(is_repeat).toEqual(false);
+    });
 });
