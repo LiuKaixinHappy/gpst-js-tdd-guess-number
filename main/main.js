@@ -1,6 +1,12 @@
-// Write your cade below:
-function main() {};
+function score(system, guess) {
+    if (system === guess) {
+        return '4A0B';
+    }
+}
+
+function main() {
+};
 
 module.exports = {
-    main
-}
+    main, score
+};
